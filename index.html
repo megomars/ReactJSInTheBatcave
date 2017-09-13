@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- React is a JS library for creating user interfaces specifically single page applications (SPA)
+	 It is all about writing components -->
+
+<!-- KEY CONCEPTS -->
+<!-- 1. Everything is a component
+	 2. Just update the state of the components that you need
+	 3. Integrates with any tech stack (Node, React Native)
+-->
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ReactJS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   		<!-- we need react and react-dom -->
+   		<script src="https://unpkg.com/react/dist/react.min.js"></script>
+  		<script src="https://unpkg.com/react-dom/dist/react-dom.min.js"></script>
+  		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+    	<!-- this is the react container -->
+    	<div id="reactdiv">
+    		<!-- some JSX code will be used here so we must use the JSX transpiler -->
+    		<script type="text/babel">
+
+    			var Beans = React.createClass(
+    				{
+    					render:function(){
+    						return (<h3>This is just a heading 3</h3>)
+    					}
+    				});
+    			ReactDOM.render(<Beans/>, document.getElementById("reactdiv"));
+    		</script>
+    	</div>
+    </body>
+</html>
