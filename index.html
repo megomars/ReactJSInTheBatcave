@@ -7,32 +7,43 @@
 	 2. Just update the state of the components that you need
 	 3. Integrates with any tech stack (Node, React Native)
 -->
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>ReactJS</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-   		<!-- we need react and react-dom -->
-   		<script src="https://unpkg.com/react/dist/react.min.js"></script>
-  		<script src="https://unpkg.com/react-dom/dist/react-dom.min.js"></script>
+   		<!-- we need react, react-dom and a JSX+ES6 preprocesor -->
+   		<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     </head>
     <body>
-    	<!-- this is the react container -->
-    	<div id="reactdiv">
-    		<!-- some JSX code will be used here so we must use the JSX transpiler -->
-    		<script type="text/babel">
+    	<div id="app"></div>
 
-    			var Beans = React.createClass(
-    				{
-    					render:function(){
-    						return (<h3>This is just a heading 3</h3>)
-    					}
-    				});
-    			ReactDOM.render(<Beans/>, document.getElementById("reactdiv"));
+    		<script type="text/babel">
+                class App extends React.Component{
+                    render(){
+                        return(
+                            <div>
+                            <h1>Hello World</h1>
+                            <h2>This is written in React</h2>
+                            <ConnectProp number="1st"/>
+                            </div>
+                            )
+                    }
+                }
+                class ConnectProp extends React.Component{
+                    render(){
+                        return(
+                            <p>{this.props.number}:I would like to welcome you!</p>
+                            )
+                    }
+                }
+
+                ReactDOM.render(<App/>, document.querySelector("#app"));
     		</script>
-    	</div>
+    	
     </body>
 </html>
