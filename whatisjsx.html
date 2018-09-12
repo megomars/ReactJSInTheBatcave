@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>My first attempt at JSX</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <style>
+    h1{font-weight:900; color:green;}
+    h2{font-weight:900; color:red;}
+    </style>
+
+    <div id="app"></div>
+    <div id="app2"></div>
+
+    <script type="text/babel">
+    var name="injectedvar";
+    
+    //This is our own component written in JSX
+    class HelloJSX extends React.Component{
+        render(){
+            return (
+                <h1>This is rendered in JSX with an {name}</h1>
+            );
+        }
+    }
+    ReactDOM.render(
+        <HelloJSX/>,
+        document.getElementById("app")
+    );
+
+
+
+
+
+    //This is our own component written in vanilla JS
+    class ByeJSX extends React.Component {
+        render() {
+            return (React.createElement(
+                "h2",
+                null,
+                "This is not rendered in JSX with an ",
+                this.props.name
+                )
+            )
+        }
+    }
+    ReactDOM.render(
+        React.createElement(ByeJSX, {name:name}),
+        document.getElementById("app2")
+    );
+
+    </script>
+</body>
+</html>
+

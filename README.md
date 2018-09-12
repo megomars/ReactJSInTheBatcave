@@ -4,6 +4,34 @@
 * There are three building blocks in React:
     * Components
          - The very first thing that I should learn is how to write components
+         - A component is either created stateless or with a state
+            - if you're creating a stateless component then just use a normal JS function.
+            ```JS
+            function ClasslessComponent(props) {
+                return(
+                    <h1>{props.name}</h1>
+                );
+            }
+            ReactDOM.render(
+                <UserDetails name={name}/>,
+                document.getElementById("app")
+            )
+            ```
+
+            - if you're creating a component with a state then use a class.
+            ```JS
+            class classycomponent extends React.Component{
+                render(){
+                    return (
+                        <h1>{this.props.name}</h1>
+                    );
+                }
+            }
+            ReactDOM.render(
+                <classycomponent name={name}/>,
+                document.getElementById("app")
+            )
+            ```
     * State
     * Props
 
