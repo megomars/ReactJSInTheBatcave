@@ -44,13 +44,13 @@
                 "h2",
                 null,
                 "This is not rendered in JSX with an ",
-                this.props.name
+                name
                 )
             )
         }
     }
     ReactDOM.render(
-        React.createElement(ByeJSX, {name:name}),
+        React.createElement(ByeJSX),
         document.getElementById("app2")
     );
 
