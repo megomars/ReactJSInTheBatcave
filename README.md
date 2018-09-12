@@ -32,8 +32,8 @@
                 document.getElementById("app")
             )
             ```
-    * State
-    * Props
+    * State - Redux is used for managing application state.
+    * Props - properties
 
 ### Keywords worth learning:
 - classes - Only use a class when you need to **manage state**.
@@ -52,6 +52,17 @@
 - lifecycle methods
 - using third-party libraries
 - single responsibility principle - Make things small
+- React lifecycle methods
+    - componentWillMount
+    - componentDidMount
+    - componentWillReceiveProps(nextProps)
+    - shouldComponentUpdate(nextProps, nextState)
+    - componentWillUpdate(nextProps, nextState)
+    - componentDidUpdate(prevProps, prevState)
+    - componentWillUnmount
+- React Router is the de facto routing solution
+![reactRouter](reactrouter.png)
+![sample reactRouter](samplerouter.png)
 
 #### Coffee break notes
 1. Functional components
