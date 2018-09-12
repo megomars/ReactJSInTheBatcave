@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>My second component with functions</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <h1>Here we use straight up JS functions</h1>
+    <div id="app"></div>
+    <script type="text/babel">
+    //This is some data
+    let user = {
+        name:"John Does",
+        city:"Dallas, TX"
+    }
+
+    function UserName(props) {
+            return <h1>{props.name}</h1>
+        }
+
+    function UserCity(props) {
+            return <p>City:  {props.city}</p>
+        }
+
+    function UserDetails(props) {
+            return <div>
+            <UserName name={props.user.name}/>
+            <UserCity city={props.user.city}/>
+            </div>;
+        }
+
+    ReactDOM.render(
+        <UserDetails user={user}/>,
+        document.getElementById("app")
+    )
+    </script>
+</body>
+</html>

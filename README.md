@@ -3,15 +3,39 @@
 * React is mostly the V in the MVC framework (The data is the **MODEL**, or the real world thing; The **VIEW** is how the reader interacts or sees your app; The **CONTROLLER** is the bridge between the **MODEL** and the **VIEW**, it decides what to do with input.)
 * There are three building blocks in React:
     * Components
+         - The very first thing that I should learn is how to write components
     * State
     * Props
+
+### Keywords worth learning:
+- classes - Only use a class when you need to **manage state**.
+- stateless functions - Try and make your components out of functions.
+- tooling
+- reducers
+- routing
+- smart and dumb components
+- pure components
+- asynchronous actions
+- JSX
+- events
+- managing state
+- passing props
+- higher-order components
+- lifecycle methods
+- using third-party libraries
+- single responsibility principle - Make things small
+
+#### Coffee break notes
+1. Functional components
+    - Architect your components with the single-responsibility principle
+    - Writing stateless components.
 
 * The easiest way to just play around with react is to use the following boilerplate code:
 ```HTML
 <html>
 <head>
-<script src="https://unpkg.com/react@15/dist/react.min.js"> </script><script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js">
-</script>
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 <body>
