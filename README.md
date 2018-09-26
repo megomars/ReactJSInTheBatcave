@@ -32,11 +32,19 @@
                 document.getElementById("app")
             )
             ```
+    **React components translate your raw data into Rich HTML, the props and state together build with that raw data to keep your UI consistent.**
+    **Using props and state together helps you make an interactive app.**
     * State - Redux is used for managing application state.
+        - A plain JS object
+        - Triggered with render()
+        - React manages the component state by calling setState(data,callback)
     * Props - properties
+        - A plain JS object
+        - Triggered with render()
+
 
 ### Keywords worth learning:
-- classes - Only use a class when you need to **manage state**.
+- Classes - Only use a class when you need to **manage state**.
 - stateless functions - Try and make your components out of functions.
 - tooling
 - reducers
@@ -53,6 +61,8 @@
 - using third-party libraries
 - single responsibility principle - Make things small
 - React lifecycle methods
+    - Get initial state - this.state
+    - Get default props - this.props
     - componentWillMount
     - componentDidMount
     - componentWillReceiveProps(nextProps)
@@ -76,6 +86,7 @@
 <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<!-- We need babel so that we can use JSX-->
 </head>
 <body>
     <div id="app"></div>
@@ -104,6 +115,7 @@ Here are the files that are created when running create-react-app myapp
 
 ## Components
 Everything in React is a component. They usually take the form of JavaScript classes. Here is a simple component which extends the react-component class. Once you create a component you should define its methods. In the example below we just want to render something on screen.
+
 ``` Javascript
 class Hello extends React.Component{
     render(){
@@ -127,10 +139,22 @@ class Hello extends React.Component{
     }
 }
 ReactDOM.render(
-    <Hello message="my prop"/>, 
-    document.getElementById("app")
+    <Hello message="my prop"/>, //component with the data
+    document.getElementById("app") //DOM node to mount to
 );
 ```
 
 ## State
 The state can be changed by the component itself.
+
+# Redux
+Redux manages an application's state. Redux handles two states: one is the data state and the other is the UI state and it's a standard option for SPAs (single page applications). Redux can be used with AngularJS, jQuery, or with React JS libraries or frameworks.
+
+Unidirectional data flow means that data flows in one direction: from the parent level to the child level. It's very difficult for two components in React to properly communicate.
+
+The STORE is the single place where Redux stores all your states. If a component finds any changes, it has to dispatch to the STORE first and if other components require access, it has to Subscribe from the store. It cannot directly authorize communication with that component.
+
+3 Principles of REDUX:
+1. Single store approach
+2. Read-only state
+3. Reducer functions to change the state

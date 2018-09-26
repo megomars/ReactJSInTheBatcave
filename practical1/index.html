@@ -1,0 +1,218 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ReactJS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- we need react, react-dom and a JSX+ES6 preprocesor -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+        section{
+            background-color:#888888;
+            padding:10px;
+            display:flex;
+            flex-wrap: wrap;
+        }
+        #box1{
+            flex:1;
+            background-color:#cccccc;
+            height:200px;
+        }
+        #box2{
+            flex:1;
+            background-color:#dddddd;
+            height:200px;
+        }
+        #box3{
+            flex:1;
+            background-color:#cccccc;
+            height:200px;
+        }
+        #box4{
+            flex:1;
+            background-color:#dddddd;
+            height:200px;
+        }
+        #box5{
+            flex:1;
+            background-color:#cccccc;
+            height:200px;
+        }
+        #box6{
+            flex:1;
+            background-color:#dddddd;
+            height:200px;
+        }
+        #box7{
+            flex:1;
+            background-color:#cccccc;
+            height:200px;
+        }
+        #box8{
+            flex:1;
+            background-color:#dddddd;
+            height:200px;
+        }
+        #box9{
+            flex:1;
+            background-color:#cccccc;
+            height:200px;
+        }
+        #box10{
+            flex:1;
+            background-color:#dddddd;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="box1"></div>
+        <div id="box2">&nbsp;</div>
+        <div id="box3">&nbsp;</div>
+        <div id="box4">&nbsp;</div>
+        <div id="box5">&nbsp;</div>
+        <div id="box6">&nbsp;</div>
+        <div id="box7">&nbsp;</div>
+        <div id="box8">&nbsp;</div>
+        <div id="box9">&nbsp;</div>
+        <div id="box10">&nbsp;</div>
+    </section>
+
+    <script type="text/babel">
+
+        let Easy = "This is a really easy example";
+
+        let Intermediate = React.createElement('div',null,"This is intermediate, it uses React.createElement('div',null,'text')");
+
+        class Hard extends React.Component{
+            render(){
+                return(
+                    <div><h1>Hello stateless component</h1></div>
+                );
+            }
+        }
+        class HardnoJSX extends React.Component{
+            render(){
+                return(
+                    React.createElement(
+                        "div",
+                        null,
+                            React.createElement(
+                                "h1",
+                                null,
+                                "Hello no JSX stateless component")
+                    )
+                );
+            }
+        }
+
+        class Expert extends React.Component{
+            render(){
+                return(
+                    <div><h1>Hello {this.props.name}, we're using a parameter</h1></div>
+                );
+            }
+        }
+
+        class ExpertnoJSX extends React.Component{
+            render(){
+                return(
+                    React.createElement(
+                        "div",
+                        null,
+                        React.createElement(
+                            "h1",
+                            null,
+                            "Hello ", this.props.name, ", we're using a parameter"
+                        )
+                    )
+                );
+            }
+        }
+
+        class Brutal extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = { seconds: 0 };
+            }
+
+            tick() {
+                this.setState(state => ({
+                seconds: state.seconds + 1
+            }));
+            }
+
+            componentDidMount() {
+                this.interval = setInterval(() => this.tick(), 1000);
+            }
+
+            componentWillUnmount() {
+                clearInterval(this.interval);
+            }
+            
+            render(){
+                return(
+                    <div>
+                        <h1>Seconds: {this.state.seconds}</h1>
+                    </div>
+                );
+            }
+        }
+
+        class BrutalnoJSX extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { seconds: 0 };
+        }
+
+        tick() {
+            this.setState(state => ({
+            seconds: state.seconds + 1
+            }));
+        }
+
+        componentDidMount() {
+            this.interval = setInterval(() => this.tick(), 1000);
+        }
+
+        componentWillUnmount() {
+            clearInterval(this.interval);
+        }
+
+        render() {
+            return React.createElement(
+            "div",
+            null,
+            "Seconds: ",
+            this.state.seconds
+            );
+        }
+        }
+
+
+        ReactDOM.render(Easy, document.getElementById("box1"));
+        ReactDOM.render(Intermediate, document.getElementById("box2"));
+        ReactDOM.render(<Hard/>, document.getElementById("box3"));
+        ReactDOM.render(<HardnoJSX/>, document.getElementById("box4"));
+        ReactDOM.render(<Expert name="James"/>, document.getElementById("box5"));
+        ReactDOM.render(<ExpertnoJSX name="James"/>, document.getElementById("box6"));
+        ReactDOM.render(<Brutal/>, document.getElementById("box7"));
+        ReactDOM.render(<BrutalnoJSX/>, document.getElementById("box8"));
+        ReactDOM.render(<Godmode/>, document.getElementById("box9"));
+        ReactDOM.render(<GodmodenoJSX/>, document.getElementById("box10"));
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
