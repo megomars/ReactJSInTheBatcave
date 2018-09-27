@@ -52,12 +52,13 @@
         <div id="box9">&nbsp;</div>
         <div id="box10">&nbsp;</div>
     </section>
+    <section>
+        <div id="box11">&nbsp;</div>
+        <div id="box12">&nbsp;</div>
+    </section>
 
     <script type="text/babel">
-
-
         let ExtremelySimple = "This is a really easy example";
-
         let Simple = React.createElement('div',{class:"santa"},"This is simple, it uses React.createElement('div',null,'text')");
 
 // If you're not managing states (stateless component) then there is really no reason to extend the React.Component class.
@@ -93,7 +94,6 @@
                 );
             }
         }
-
         class Hard extends React.Component{
             render(){
                 return(
@@ -186,8 +186,43 @@
         ReactDOM.render(<HardnoJSX name="James"/>, document.getElementById("box7"));
         ReactDOM.render(<Extreme/>, document.getElementById("box8"));
         ReactDOM.render(<ExtremenoJSX/>, document.getElementById("box9"));
-        // ReactDOM.render(<Brutal/>, document.getElementById("box9"));
-        // ReactDOM.render(<BrutalnoJSX/>, document.getElementById("box10"));
+        
+        // ReactDOM.render(<Brutal/>, document.getElementById("box11"));
+        // ReactDOM.render(<BrutalnoJSX/>, document.getElementById("box12"));
+
+
+
+// Here I want to go freestyle
+let database = {
+    name: "Charles",
+    age:10,
+    children :[
+        {name:"Susan"},{name:"Timmy"}
+    ]
+}
+
+function HappyF(props){
+    return(
+        <h1>This is {props.db.children[0].name}</h1>
+    )
+}
+
+class HappyC extends React.Component{
+    render(){
+        return(
+            <h1>This is an awesome {this.props.db.children[0].name}</h1>
+        )
+    }
+}
+
+ReactDOM.render(
+    <HappyC db={database}/>,
+    document.getElementById("box11")
+);
+ReactDOM.render(
+    <HappyF db={database}/>,
+    document.getElementById("box12")
+);
 
     </script>
 </body>

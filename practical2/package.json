@@ -1,0 +1,32 @@
+{
+  "name": "reactjsinthebatcave",
+  "version": "1.0.0",
+  "description": "* React is mostly the V in the MVC framework (The data is the **MODEL**, or the real world thing; The **VIEW** is how the reader interacts or sees your app; The **CONTROLLER** is the bridge between the **MODEL** and the **VIEW**, it decides what to do with input.) * There are three building blocks in React:     * Components          - The very first thing that I should learn is how to write components          - A component is either created stateless or with a state             - if you're creating a stateless component then just use a normal JS function.             ```JS             function ClasslessComponent(props) {                 return(                     <h1>{props.name}</h1>                 );             }             ReactDOM.render(                 <UserDetails name={name}/>,                 document.getElementById(\"app\")             )             ```",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "start":"webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megomars/ReactJSInTheBatcave.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/megomars/ReactJSInTheBatcave/issues"
+  },
+  "homepage": "https://github.com/megomars/ReactJSInTheBatcave#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}

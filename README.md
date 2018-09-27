@@ -71,6 +71,7 @@
     - componentDidUpdate(prevProps, prevState)
     - componentWillUnmount
 - React Router is the de facto routing solution
+- Constructor
 ![reactRouter](reactrouter.png)
 ![sample reactRouter](samplerouter.png)
 
