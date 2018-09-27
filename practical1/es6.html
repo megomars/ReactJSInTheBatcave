@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Test some ES6</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- we need react, react-dom and a JSX+ES6 preprocesor -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+        section{
+            background-color:#888888;
+            padding:10px;
+            display:flex;
+            flex-wrap: wrap;
+        }
+        #box1{
+            flex:1;
+            background-color:#cccccc;
+            height:200px;
+        }
+        #box2{
+            flex:1;
+            background-color:#eeeeee;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </section>
+
+    <script type="text/babel"></script>
+    <script>
+        var fun = function(p){
+            return(
+                "Hello " + p
+            )
+        }
+
+function myFunction(x, y = 1333) {
+    return x + y;
+}
+console.log(myFunction(5,4));
+
+        let greetings = (name) => {
+        return `hello ${name}`;
+        }
+
+        let funny = (santa) => {
+            return (`Hello world ${santa}`);
+        }
+        let cats=fun(39);
+
+// ES5
+var x = function(x, y) {
+     return x * y;
+}
+
+// ES6
+const xzibit = (x, y) => x * y;
+const xzibitz = (x, y) => { return x * y };
+
+
+
+
+        document.getElementById("box1").innerHTML = cats;
+        document.getElementById("box2").innerHTML = greetings;
+    </script>
+</body>
+</html>
