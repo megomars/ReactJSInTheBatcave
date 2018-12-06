@@ -1,0 +1,38 @@
+.container{
+  background-color:#fb9d04;
+  text-align: center;
+  padding:10px;
+  font-size:30px;
+}
+
+.todo-item{
+  color:#333333;
+}
+
+.todo-button{
+  font-size:30px;
+  margin:20px;
+  padding:10px 20px;
+}
+
+.todo-button:hover{
+  cursor: pointer;
+  background-color:salmon;
+}
+.todo-list{
+  list-style: none;
+}
+
+.todo-input{
+  font-size:30px;
+  margin:20px;
+  padding:10px 20px;
+}
+
+.new-todo-enter{
+  opacity:0;
+}
+.new-todo-enter-active{
+  opacity:1;
+  transition:opacity 1000ms ease-in;
+}

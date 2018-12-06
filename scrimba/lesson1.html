@@ -1,0 +1,36 @@
+<html>
+<head>
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="appc"></div>
+    <div id="appf"></div>
+
+    <script type="text/babel">
+
+//classy component
+        class CHello extends React.Component {
+            render(){
+                return <h1>Hello {this.props.message}</h1>;
+            }
+        }
+        ReactDOM.render(
+            <CHello message="classy component"/>,
+            document.getElementById("appc")
+        );
+
+//classless component
+        function FHello(props){
+                return <h1>Hello {props.message}</h1>;
+        }       
+        ReactDOM.render(
+            <FHello message="classless component"/>,
+            document.getElementById("appf")
+        );
+
+
+    </script>
+</body>
+</html>
